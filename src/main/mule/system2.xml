@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="93b299cc-9d7f-44ec-8136-a9ae957bbafa" >
+		<http:listener-connection host="localhost" port="8082" />
+	</http:listener-config>
+	<flow name="system2Flow" doc:id="eebc9654-2a49-42d6-828a-96c56de3c9fe" >
+		<http:listener doc:name="Listener" doc:id="ac92cea2-8f40-4247-b8f8-1d25a11d58e6" path="/sys2" config-ref="HTTP_Listener_config"/>
+		<set-payload value="hii harika" doc:name="Set Payload" doc:id="a8e78408-122d-4d2e-9f4d-9f495d528346" />
+	</flow>
+</mule>
